@@ -19,7 +19,7 @@ void print_matrix (char M[][10], int n) {
 void conquer (char M[][10], int i, int j, int n, int nlabel) {
   Queue *q = create((n*n)+1); /*supondo pior caso*/
   enqueue (q, (point){i,j});
-  M[i][j] = (char) nlabel;
+  M[i][j] = (char) nlabel+'0';
   while (!empty(q)) {
     point p = dequeue (q);
     /*Terminar*/
