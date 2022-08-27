@@ -19,48 +19,48 @@ void print_matrix (char M[][10], int n) {
 void conquer (char M[][10], int i, int j, int n, int nlabel) {
   Queue *q = create((n*n)+1); /*supondo pior caso*/
   enqueue (q, (point){i,j});
-  M[i][j] = ' ';
+  M[i][j] = (char) nlabel;
   while (!empty(q)) {
     point p = dequeue (q);
     /*Terminar*/
   if(inside(p.x+1,p.y+1,n) && M[p.x+1][p.y+1]=='*')
   {
-    M[p.x+1][p.y+1]=' ';
+    M[p.x+1][p.y+1]=(char) nlabel+'0';
     enqueue(q,(point){p.x+1,p.y+1});
   }
   if(inside(p.x,p.y+1,n) && M[p.x][p.y+1]=='*')
   {
-    M[p.x][p.y+1]=' ';
+    M[p.x][p.y+1]=(char) nlabel+'0';
     enqueue(q,(point){p.x,p.y+1});
   }
    if(inside(p.x+1,p.y,n) && M[p.x+1][p.y]=='*')
   {
-    M[p.x+1][p.y]=' ';
+    M[p.x+1][p.y]=(char) nlabel+'0';
     enqueue(q,(point){p.x+1,p.y});
   }
      if(inside(p.x+1,p.y-1,n) && M[p.x+1][p.y-1]=='*')
   {
-    M[p.x+1][p.y-1]=' ';
+    M[p.x+1][p.y-1]=(char) nlabel+'0';
     enqueue(q,(point){p.x+1,p.y-1});
   }
      if(inside(p.x-1,p.y-1,n) && M[p.x-1][p.y-1]=='*')
   {
-    M[p.x-1][p.y-1]=' ';
+    M[p.x-1][p.y-1]=(char) nlabel+'0';
     enqueue(q,(point){p.x-1,p.y-1});
   }
      if(inside(p.x-1,p.y,n) && M[p.x-1][p.y]=='*')
   {
-    M[p.x-1][p.y]=' ';
+    M[p.x-1][p.y]=(char) nlabel+'0';
     enqueue(q,(point){p.x-1,p.y});
   }
      if(inside(p.x,p.y-1,n) && M[p.x][p.y-1]=='*')
   {
-    M[p.x][p.y-1]=' ';
+    M[p.x][p.y-1]=(char) nlabel+'0';
     enqueue(q,(point){p.x,p.y-1});
   }
      if(inside(p.x-1,p.y+1,n) && M[p.x-1][p.y+1]=='*')
   {
-    M[p.x-1][p.y+1]=' ';
+    M[p.x-1][p.y+1]=(char) nlabel+'0';
     enqueue(q,(point){p.x-1,p.y+1});
   }
 
