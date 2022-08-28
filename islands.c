@@ -1,5 +1,9 @@
 #include "pqueue.h"
 
+//melhor caso==11/4*n^2 +-1 (ilhas de um asterisco)
+//pior caso == 9*n^2+-1  (uma ilha so)
+//O (n^2)
+
 int inside (int i, int j, int n) {
   if ((i < 0) || (j < 0) || (i >= n) || (j >= n))
     return 0;
